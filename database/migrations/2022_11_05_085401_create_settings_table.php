@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
+            $table->string('website_name');
+            $table->string('logo');
+            $table->string('favicon')->nullable();
+            $table->string('description')->nullable();
+            $table->string('meta_title');
+            $table->string('meta_keyword')->nullable();
+            $table->string('meta_description')->nullable();
             $table->timestamps();
         });
     }

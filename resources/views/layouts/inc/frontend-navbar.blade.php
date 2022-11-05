@@ -14,7 +14,7 @@
 </div>
 
 <div class="sticky-top">
-    <nav class="navbar navbar-expand-lg navbar-light bg-green">
+    <nav class="navbar navbar-expand-lg navbar-light bg-blue">
         <div class="container">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -57,7 +57,7 @@
                             <li class="nav-item">
                                 <form action="{{ route('logout') }}" method="post" class="nav-link">
                                     @csrf
-                                    <button type="submit" class="clear-button nav-link">Logout</button>
+                                    <button type="submit" class="clear-button bg-danger nav-link">Logout</button>
                                 </form>
                                 <style>
                                     .clear-button {
