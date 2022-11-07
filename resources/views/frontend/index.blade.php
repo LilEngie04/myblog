@@ -10,33 +10,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-
-                <div class="owl-carousel category-carousel owl-theme">
-
-                    @foreach($all_categories as $all_cate_item)
-                    <div class="item">
-                        <a href="{{ url('tutorial/'.$all_cate_item->slug)}}" class="text-decoration-none">
-                        <div class="card">
-                            <img src="{{asset('uploads/category/'.$all_cate_item->image)}}" alt="Image">
-                            <div class="card-body text-center">
-                                <h5 class="text-dark">{{ $all_cate_item->name }}</h5>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    @endforeach
-                </div>
-
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
             </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="py-1 bg-gray">
-    <div class="container">
-        <div class="border text-center p-3">
-            <h3>Advertise here</h3>
         </div>
     </div>
 </div>
@@ -48,13 +24,13 @@
                 <h4>Auto Blog</h4>
                 <div class="underline"></div>
                 <p>
-                    Art is a diverse range of human activity, and resulting product, that involves creative or imaginative talent expressive of technical proficiency, beauty, emotional power, or conceptual ideas.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorum, facilis incidunt iure necessitatibus qui sunt ullam vel veniam! Ad adipisci eveniet hic impedit iure modi nam nesciunt repellat veniam?
                 </p>
                 <p>
-                    There is no generally agreed definition of what constitutes art and its interpretation has varied greatly throughout history and across cultures. The three classical branches of visual art are painting, sculpture, and architecture.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus illum repellat sunt totam. A atque dolor dolorum expedita explicabo fuga omnis placeat quasi reprehenderit vero? Corporis cumque ducimus excepturi rem!
                 </p>
                 <p>
-                    Theatre, dance, and other performing arts, as well as literature, music, film and other media such as interactive media, are included in a broader definition of the arts.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores at debitis dignissimos dolorum ea, enim esse itaque laboriosam minus, molestias natus nisi nobis nostrum quas, repellat repellendus tempora unde.
                 </p>
             </div>
         </div>
@@ -66,7 +42,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h4>All Categories List</h4>
+                <h4>Категорії продуктів</h4>
                 <div class="underline"></div>
             </div>
             @foreach($all_categories as $all_cateitem)
@@ -88,7 +64,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h4>Latest Posts</h4>
+                <h4>Останні запитання</h4>
                 <div class="underline"></div>
             </div>
             <div class="col-md-8">

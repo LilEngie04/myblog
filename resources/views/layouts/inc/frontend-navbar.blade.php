@@ -27,28 +27,15 @@
                 <div>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Home</a>
+                            <a class="nav-link" href="{{ url('/') }}">Головна</a>
                         </li>
-                        {{--                    <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    Dropdown
-                                                </a>
-                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                    <li><hr class="dropdown-divider"></li>
-                                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                                </ul>
-                                            </li>--}}
-                        @php
-                            $categories = App\Models\Category::where('navbar_status', '0')->where('status', '0')->get();
-                        @endphp
-                        @foreach($categories as $category)
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                   href="{{ url('tutorial/'.$category->slug) }}">{{ $category->name }}</a>
-                            </li>
-                        @endforeach
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/') }}">Задати питання</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/') }}">Мої питання</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="ms-auto ">
@@ -57,7 +44,7 @@
                             <li class="nav-item">
                                 <form action="{{ route('logout') }}" method="post" class="nav-link">
                                     @csrf
-                                    <button type="submit" class="clear-button bg-danger nav-link">Logout</button>
+                                    <button type="submit" class="clear-button bg-danger nav-link">Вийти</button>
                                 </form>
                                 <style>
                                     .clear-button {
@@ -73,10 +60,10 @@
                             </li>
                         @else
                             <li class="nav-item">
-                                <a href="{{ route('login') }}" class="nav-link">login</a>
+                                <a href="{{ route('login') }}" class="nav-link">Увійти</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('register') }}" class="nav-link">Register</a>
+                                <a href="{{ route('register') }}" class="nav-link">Зареєструватися</a>
                             </li>
                         @endif
                     </ul>

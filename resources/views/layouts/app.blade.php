@@ -10,7 +10,7 @@
     <title>@yield('title')</title>
     <meta name="description" content="@yield('meta_description')">
     <meta name="keyword" content="@yield('meta_keyword')">
-    <meta name="author" content="Anastasiia">
+    <meta name="author" content="Vlad Melnyk">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -60,6 +60,5 @@
         }
     })
 </script>
-
 </body>
 </html>
