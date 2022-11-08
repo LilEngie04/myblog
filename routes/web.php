@@ -44,6 +44,10 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function (){
 Route::prefix('user')->middleware(['auth', 'isUser'])->group(function (){
     Route::get('questions', [App\Http\Controllers\User\QuestionController::class, 'index']);
     Route::get('add-question', [App\Http\Controllers\User\QuestionController::class, 'create']);
+    Route::post('add-question', [App\Http\Controllers\User\QuestionController::class, 'store']);
+    Route::get('user/{question_id}', [App\Http\Controllers\User\QuestionController::class, 'edit']);
+    Route::put('update-question/{question_id}', [App\Http\Controllers\User\QuestionController::class, 'update']);
+    Route::get('delete-question/{question_id}', [App\Http\Controllers\User\QuestionController::class, 'destroy']);
 });
 
 Auth::routes();

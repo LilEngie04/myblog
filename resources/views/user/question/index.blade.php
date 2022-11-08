@@ -13,8 +13,9 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid px-4">
-        <div class="card mt-4">
+
+    <div class="container-fluid py-5">
+        <div class="card py-5">
             <div class="card-header">
                 <h4>View Questions
                     <a href="{{url('user/add-question')}}" class="btn btn-primary float-end">Add Question</a>
