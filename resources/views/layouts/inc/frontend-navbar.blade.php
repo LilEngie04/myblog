@@ -31,10 +31,10 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Задати питання</a>
+                            <a class="nav-link" href="{{ url('/user/add-question') }}">Задати питання</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Мої питання</a>
+                            <a class="nav-link" href="{{ url('/user/questions') }}">Мої питання</a>
                         </li>
                     </ul>
                 </div>
@@ -44,7 +44,7 @@
                             <li class="nav-item">
                                 <form action="{{ route('logout') }}" method="post" class="nav-link">
                                     @csrf
-                                    <button type="submit" class="clear-button bg-danger nav-link">Вийти</button>
+                                    <button type="submit" class="clear-button nav-link">Вийти</button>
                                 </form>
                                 <style>
                                     .clear-button {

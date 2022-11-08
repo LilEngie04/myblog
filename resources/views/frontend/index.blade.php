@@ -21,16 +21,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h4>Auto Blog</h4>
+                <h4>FoodChecker</h4>
                 <div class="underline"></div>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorum, facilis incidunt iure necessitatibus qui sunt ullam vel veniam! Ad adipisci eveniet hic impedit iure modi nam nesciunt repellat veniam?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus illum repellat sunt totam. A atque dolor dolorum expedita explicabo fuga omnis placeat quasi reprehenderit vero? Corporis cumque ducimus excepturi rem!
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores at debitis dignissimos dolorum ea, enim esse itaque laboriosam minus, molestias natus nisi nobis nostrum quas, repellat repellendus tempora unde.
+                    FoodChecker - це веб-сайт, створений з ціллю допомогти у виборі харчових продуктів за їх якістю та складом.
                 </p>
             </div>
         </div>
@@ -76,11 +70,6 @@
                         <h6>Posted On: {{$latest_posts_item->created_at->format('d-m-Y')}}</h6>
                     </div>
                 @endforeach
-            </div>
-            <div class="col-md-4">
-                <div class="border text-center p-3">
-                    <h3>Advertise here</h3>
-                </div>
             </div>
         </div>
     </div>
