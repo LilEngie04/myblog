@@ -27,7 +27,7 @@
                 <h4>Задати питання</h4>
             </div>
             <div class="card-body">
-                <form action="{{url('user/add-question')}}" method="POST">
+                <form action="{{url('user/add-post')}}" method="POST">
 
                     @csrf
 
@@ -50,7 +50,7 @@
                         <input type="text" name="slug" class="form-control"/>
                     </div>
 
-                    <h4>SEO Tags</h4>
+                    {{--<h4>SEO Tags</h4>
                     <div class ="mb-3">
                         <label>Meta title</label>
                         <input type="text" name="meta_title" class="form-control">
@@ -59,7 +59,7 @@
                     <div class ="mb-3">
                         <label>Meta Keywords</label>
                         <textarea name="meta_keyword" rows ="3" class="form-control"></textarea>
-                    </div>
+                    </div>--}}
 
                     <div class="row">
                         <div class="col-md-8">

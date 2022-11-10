@@ -39,6 +39,11 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                     Users
                 </a>
+
+                <a class="nav-link {{Request::is('admin/questions') ? 'active':''}}" href="{{url('admin/questions')}}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                    Questions
+                </a>
             </div>
         </div>
         <div class="sb-sidenav-footer">

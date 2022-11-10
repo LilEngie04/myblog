@@ -14,7 +14,9 @@ class Question extends Model
         'category_id',
         'name',
         'slug',
+        'description',
         'meta_title',
+        'meta_description',
         'meta_keyword',
         'created_by'
     ];

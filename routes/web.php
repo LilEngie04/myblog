@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
@@ -39,15 +40,26 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function (){
     Route::get('user/{user_id}',[App\Http\Controllers\Admin\UserController::class, 'edit']);
     Route::put('update-user/{user_id}',[App\Http\Controllers\Admin\UserController::class, 'update']);
 
+    Route::get('questions', [App\Http\Controllers\Admin\QuestionController::class, 'index']);
+    Route::get('question/{question_id}', [App\Http\Controllers\Admin\QuestionController::class, 'edit']);
+    Route::put('update-question/{question_id}', [App\Http\Controllers\Admin\QuestionController::class, 'update']);
 });
 
 Route::prefix('user')->middleware(['auth', 'isUser'])->group(function (){
     Route::get('questions', [App\Http\Controllers\User\QuestionController::class, 'index']);
-    Route::get('add-question', [App\Http\Controllers\User\QuestionController::class, 'create']);
-    Route::post('add-question', [App\Http\Controllers\User\QuestionController::class, 'store']);
-    Route::get('user/{question_id}', [App\Http\Controllers\User\QuestionController::class, 'edit']);
-    Route::put('update-question/{question_id}', [App\Http\Controllers\User\QuestionController::class, 'update']);
-    Route::get('delete-question/{question_id}', [App\Http\Controllers\User\QuestionController::class, 'destroy']);
+    Route::get('add-post', [App\Http\Controllers\User\QuestionController::class, 'create']);
+    Route::post('add-post', [App\Http\Controllers\User\QuestionController::class, 'store']);
+    Route::get('post/{question_id}', [App\Http\Controllers\User\QuestionController::class, 'edit']);
+    Route::put('update-post/{question_id}', [App\Http\Controllers\User\QuestionController::class, 'update']);
+    Route::get('delete-post/{question_id}', [App\Http\Controllers\User\QuestionController::class, 'destroy']);
+
+    Route::get('admin/category', [App\Http\Controllers\Admin\CategoryController::class, 'index']);
+    Route::get('admin/add-category', [App\Http\Controllers\Admin\CategoryController::class, 'create']);
+    Route::post('admin/add-category', [App\Http\Controllers\Admin\CategoryController::class, 'store']);
+    Route::get('admin/edit-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'edit']);
+    Route::put('admin/update-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'update']);
+    Route::get('admin/delete-category/{category_id}',  [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
+    Route::post('admin/delete-category',  [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
 });
 
 Auth::routes();

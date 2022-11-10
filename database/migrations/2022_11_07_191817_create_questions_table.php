@@ -18,7 +18,9 @@ return new class extends Migration
             $table->integer('category_id');
             $table->string('name');
             $table->string('slug');
-            $table->string('meta_title');
+            $table->string('description');
+            $table->string('meta_title')->nullable();
+            $table->mediumText('meta_description')->nullable();
             $table->mediumText('meta_keyword')->nullable();
             $table->integer('created_by');
             $table->timestamps();

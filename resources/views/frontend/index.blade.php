@@ -62,12 +62,12 @@
                 <div class="underline"></div>
             </div>
             <div class="col-md-8">
-                @foreach($latest_posts as $latest_posts_item)
+                @foreach($latest_questions as $latest_questions_item)
                     <div class="card card-body bg-gray shadow mb-3">
-                        <a href="{{url('tutorial/'.$latest_posts_item->category->slug.'/'.$latest_posts_item->slug)}}" class="text-decoration-none">
-                            <h5 class="text-dark mb-0">{{$latest_posts_item->name }}</h5>
+                        <a href="{{url('tutorial/'.$latest_questions_item->category->slug.'/'.$latest_questions_item->slug)}}" class="text-decoration-none">
+                            <h5 class="text-dark mb-0">{{$latest_questions_item->name }}</h5>
                         </a>
-                        <h6>Posted On: {{$latest_posts_item->created_at->format('d-m-Y')}}</h6>
+                        <h6>Posted On: {{$latest_questions_item->created_at->format('d-m-Y')}}</h6>
                     </div>
                 @endforeach
             </div>
