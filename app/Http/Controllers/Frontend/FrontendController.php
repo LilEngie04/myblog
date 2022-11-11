@@ -16,16 +16,16 @@ class FrontendController extends Controller
     {
         $all_categories = Category::where('status', '0')->get();
         $latest_questions=Question::where('status', '0')->orderBy('created_at', 'DESC')->get()->take(15);
-        $question = Question::all();
-        return view( 'frontend.index', compact('all_categories', 'latest_questions', 'question'));
+        //$question = Question::all();
+        return view( 'frontend.index', compact('all_categories', 'latest_questions'));
     }
 
-    public function viewCategoryPost(string $category_slug)
+    public function viewCategoryQuestion(string $category_slug)
     {
         $category = Category::where('slug', $category_slug)->where('status','0')->first();
         if($category)
         {
-            $question = Question::where('category_id', $category->id)->where('status', '0')->paginate(2);
+            $question = Question::where('category_id', $category->id)->paginate(2);
             return view('frontend.question.index', compact('question', 'category'));
         }
         else
@@ -34,7 +34,7 @@ class FrontendController extends Controller
         }
     }
 
-    public function viewPost(string $category_slug, string $question_slug, Request $request)
+    public function viewQuestion(string $category_slug, string $question_slug, Request $request)
     {
         $category = Category::where('slug', $category_slug)->where('status','0')->first();
         if($category)
