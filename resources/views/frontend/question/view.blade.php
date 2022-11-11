@@ -53,7 +53,7 @@
                                 <button type="submit" class="btn btn-primary mt-3">Submit</button>
                             </form>
                         </div>--}}
-                        @forelse($comments as $comment)
+                        {{--@forelse($comments as $comment)
                         <div class="comment-container card card-body shadow-sm mt-3">
                             <div class="detail-area">
                                 <h6 class="user-name mb-1">
@@ -71,7 +71,7 @@
                                 <div class="card card-body shadow-sm mt-3">
                                 <h6>No Comment Yet</h6>
                                 </div>
-                            @endforelse
+                            @endforelse--}}
                     </div>
 
                 </div>

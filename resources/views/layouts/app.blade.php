@@ -41,24 +41,5 @@
     {{--<script src="{{asset('assets/js/bootstrap.bundle.min.js') }}"></script>--}}
     {{--<script src="{{asset('assets/js/owl.carousel.min.js') }}"></script>--}}
 
-<script>
-    $('.category-carousel').owlCarousel({
-        loop:true,
-        margin:10,
-        nav:true,
-        dots: false,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:3
-            },
-            1000:{
-                items:4
-            }
-        }
-    })
-</script>
 </body>
 </html>

@@ -36,6 +36,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/user/questions') }}">Мої питання</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/user/search-question') }}">Пошук питань</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="ms-auto ">
