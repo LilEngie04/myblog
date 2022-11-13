@@ -81,6 +81,5 @@ class QuestionController extends Controller
         {
             return redirect('user/question')->with('message', 'No Question Id Found');
         }
-
     }
 }

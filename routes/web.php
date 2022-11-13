@@ -12,6 +12,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'index']);
 Route::get('tutorial/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'viewCategoryQuestion']);
 Route::match(['get', 'post'],'/tutorial/{category_slug}/{question_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'viewQuestion']);
+Route::match(['get', 'post'], 'search-question', [App\Http\Controllers\Frontend\FrontendController::class, 'search']);
+
 
 //Comment System
 Route::post('comments', [App\Http\Controllers\Frontend\CommentController::class, 'store']);
@@ -39,6 +41,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function (){
     Route::get('users', [App\Http\Controllers\Admin\UserController::class, 'index']);
     Route::get('user/{user_id}',[App\Http\Controllers\Admin\UserController::class, 'edit']);
     Route::put('update-user/{user_id}',[App\Http\Controllers\Admin\UserController::class, 'update']);
+    Route::get('/user/status/{user_id}/{status_code}', [App\Http\Controllers\Admin\UserController::class, 'updateStatus'])->name('user.status.update');
 
     Route::get('questions', [App\Http\Controllers\Admin\QuestionController::class, 'index']);
     Route::get('question/{question_id}', [App\Http\Controllers\Admin\QuestionController::class, 'edit']);

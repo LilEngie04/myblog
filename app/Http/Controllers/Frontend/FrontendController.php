@@ -64,4 +64,10 @@ class FrontendController extends Controller
             return redirect('/');
         }
     }
+
+    public function search()
+    {
+        $questions = Question::all();
+        return view('frontend.question.search', compact('questions'));
+    }
 }

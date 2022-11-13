@@ -20,6 +20,8 @@
                         <th>Email</th>
                         <th>Role</th>
                         <th>Edit</th>
+                        <th>Status</th>
+                        <th>Delete</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -31,6 +33,18 @@
                             <td>{{$item->role_as == '1' ? 'Admin':'User'}}</td>
                             <td>
                                 <a href="{{url('admin/user/'.$item->id)}}" class="btn btn-success">Edit</a>
+                            </td>
+                            @if($item->status == 1)
+                            <td>
+                                <a href="{{route('user.status.update', ['user_id' => $item->id, 'status_code' => 0])}}" class="btn btn-warning">Ban</a>
+                            </td>
+                            @else
+                            <td>
+                                <a href="{{route('user.status.update', ['user_id' => $item->id, 'status_code' => 1])}}" class="btn btn-success">Check</a>
+                            </td>
+                            @endif
+                            <td>
+                                <a href="{{url('admin/user/'.$item->id)}}" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                     @endforeach
