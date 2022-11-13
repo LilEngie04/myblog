@@ -30,7 +30,7 @@
                     </div>
                 @endif
 
-                <form action="{{url('user/update-post/'.$question->id)}}" method="POST">
+                <form action="{{url('user/update-question/'.$question->id)}}" method="POST">
                     @csrf
                     @method('PUT')
 
@@ -49,11 +49,6 @@
                     <div class="mb-3">
                         <label>Питання</label>
                         <input type="text" name="name" value="{{$question->name}}" class="form-control"/>
-                    </div>
-
-                    <div class="mb-3">
-                        <label>Slug</label>
-                        <input type="text" name="slug" value="{{$question->slug}}" class="form-control"/>
                     </div>
 
                     <div class="row">

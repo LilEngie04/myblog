@@ -46,6 +46,8 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function (){
     Route::get('questions', [App\Http\Controllers\Admin\QuestionController::class, 'index']);
     Route::get('question/{question_id}', [App\Http\Controllers\Admin\QuestionController::class, 'edit']);
     Route::put('update-question/{question_id}', [App\Http\Controllers\Admin\QuestionController::class, 'update']);
+    Route::get('delete-question/{question_id}', [App\Http\Controllers\Admin\QuestionController::class, 'destroy']);
+
 });
 
 Route::prefix('user')->middleware(['auth', 'isUser'])->group(function (){

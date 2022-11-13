@@ -18,7 +18,9 @@
         <div class="card py-5">
             <div class="card-header">
                 <h4>View Questions
+{{--
                     <a href="{{url('user/add-post')}}" class="btn btn-primary float-end">Add Question</a>
+--}}
                 </h4>
             </div>
             <div class="card-body">

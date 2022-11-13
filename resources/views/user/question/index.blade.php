@@ -18,7 +18,7 @@
         <div class="card py-5">
             <div class="card-header">
                 <h4>View Questions
-                    <a href="{{url('user/add-post')}}" class="btn btn-primary float-end">Add Question</a>
+                    <a href="{{url('user/add-question')}}" class="btn btn-primary float-end">Add Question</a>
                 </h4>
             </div>
             <div class="card-body">
@@ -43,10 +43,10 @@
                         <td>{{$item->category->name}}</td>
                         <td>{{$item->name}}</td>
                         <td>
-                            <a href="{{url('user/post/'.$item->id)}}" class="btn btn-success">Edit</a>
+                            <a href="{{url('user/question/'.$item->id)}}" class="btn btn-success">Edit</a>
                         </td>
                         <td>
-                            <a href="{{url('user/delete-post/'.$item->id)}}" class="btn btn-danger">Delete</a>
+                            <a href="{{url('user/delete-question/'.$item->id)}}" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                     @endforeach

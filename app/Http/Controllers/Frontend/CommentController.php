@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
 use App\Models\Post;
+use App\Models\Question;
 use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,10 +24,10 @@ class CommentController extends Controller
             {
                 return redirect()->back()->with('message', 'Comment area is mandatory');
             }
-            $post = Post::where('slug', $request->post_slug)->where('status', '0')->first();
-            if ($post) {
+            $question = Question::where('slug', $request->question_slug)->where('status', '0')->first();
+            if ($question) {
                 Comment::create([
-                    'post_id' => $post->id,
+                    'question_id' => $question->id,
                     'user_id' => Auth::user()->id,
                     'comment_body' => $request->comment_body
                 ]);

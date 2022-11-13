@@ -34,7 +34,6 @@ class QuestionController extends Controller
         $question = new Question;
         $question->name = $data['name'];
         $question->category_id = $data["category_id"];
-        $question->slug = Str::slug($data['slug']);
 
 /*        $category->navbar_status = $request->navbar_status == true ? '1':'0';*/
 /*        $category->status = $request->status == true ? '1':'0';*/

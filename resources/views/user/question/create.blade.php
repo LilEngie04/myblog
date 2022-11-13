@@ -27,7 +27,7 @@
                 <h4>Задати питання</h4>
             </div>
             <div class="card-body">
-                <form action="{{url('user/add-post')}}" method="POST">
+                <form action="{{url('user/add-question')}}" method="POST">
 
                     @csrf
 
@@ -45,10 +45,10 @@
                         <input type="text" name="name" class="form-control"/>
                     </div>
 
-                    <div class="mb-3">
+                    {{--<div class="mb-3">
                         <label>Slug</label>
                         <input type="text" name="slug" class="form-control"/>
-                    </div>
+                    </div>--}}
 
                     {{--<h4>SEO Tags</h4>
                     <div class ="mb-3">
