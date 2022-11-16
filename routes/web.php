@@ -1,8 +1,9 @@
 <?php
 
+use App\Models\Question;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use Symfony\Component\Console\Input\Input;
 
 
 Auth::routes();
@@ -12,12 +13,25 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'index']);
 Route::get('tutorial/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'viewCategoryQuestion']);
 Route::match(['get', 'post'],'/tutorial/{category_slug}/{question_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'viewQuestion']);
-Route::match(['get', 'post'], 'search-question', [App\Http\Controllers\Frontend\FrontendController::class, 'search']);
+/*Route::match(['get', 'post'], 'search-question', [App\Http\Controllers\Frontend\FrontendController::class, 'search']);*/
+Route::any('/search', function (\Illuminate\Http\Request $req){
 
+    $q=$req->q;
+//dd($q);
+    if(!isset($q))
+    $questions = Question::all();
+    else
+    $questions = Question::where('name', 'LIKE', '%'.$q.'%')->orWhere('slug', 'LIKE', '%'.$q.'%')->get();
+
+//    if(count($questions)>0)
+        return view('frontend.question.search', compact('questions'))->withQuery($q);
+//    else
+//        return view('frontend.question.search')->withMessage('No Details found. Try to search again!');
+});
 
 //Comment System
 Route::post('comments', [App\Http\Controllers\Frontend\CommentController::class, 'store']);
-
+Route::post('delete-comment', [App\Http\Controllers\Frontend\CommentController::class, 'destroy']);
 
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function (){
 

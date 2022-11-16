@@ -9,10 +9,10 @@
 <div class="bg-primary py-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            {{--<div class="col-md-12">
                     <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
                     <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-            </div>
+            </div>--}}
         </div>
     </div>
 </div>

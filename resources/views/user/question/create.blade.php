@@ -45,10 +45,10 @@
                         <input type="text" name="name" class="form-control"/>
                     </div>
 
-                    {{--<div class="mb-3">
+                    <div class="mb-3">
                         <label>Slug</label>
                         <input type="text" name="slug" class="form-control"/>
-                    </div>--}}
+                    </div>
 
                     {{--<h4>SEO Tags</h4>
                     <div class ="mb-3">

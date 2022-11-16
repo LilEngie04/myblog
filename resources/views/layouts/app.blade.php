@@ -41,5 +41,6 @@
     {{--<script src="{{asset('assets/js/bootstrap.bundle.min.js') }}"></script>--}}
     {{--<script src="{{asset('assets/js/owl.carousel.min.js') }}"></script>--}}
 
+@yield('scripts')
 </body>
 </html>

@@ -50,6 +50,10 @@
                         <label>Питання</label>
                         <input type="text" name="name" value="{{$question->name}}" class="form-control"/>
                     </div>
+                    <div class="mb-3">
+                        <label>Slug</label>
+                        <input type="text" name="slug" value="{{$question->slug}}" class="form-control"/>
+                    </div>
 
                     <div class="row">
                         <div class="col-md-8">

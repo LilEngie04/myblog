@@ -26,16 +26,14 @@
                     </div>
 
                     <div class="comment-area mt-4">
-
                         @if(session('message'))
                             <h6 class="alert alert-warning mb-3">{{  session('message')  }}</h6>
                         @endif
-
                         <div class="card card-body">
                             <h6 class="card-title">Leave a comment</h6>
                             <form action="{{ url('comments') }}" method="POST">
                                 @csrf
-                                <input type="hidden" name="post_slug" value="{{$question->slug}}">
+                                <input type="hidden" name="question_slug" value="{{$question->slug}}">
                                 <textarea name="comment_body" class="form-control" rows="3" required></textarea>
                                 <button type="submit" class="btn btn-primary mt-3">Submit</button>
                             </form>
@@ -54,6 +52,12 @@
                                     {!!  $comment->comment_body !!}
                                 </p>
                             </div>
+                            @if(Auth::check() && Auth::id() == $comment->user_id)
+                                <div>
+                                    <a href="" class="btn btn-primary btn-sm me-2">Edit</a>
+                                    <button type="button" value="{{$comment->id}}" class="deleteComment btn btn-danger btn-sm me-2">Delete</button>
+                                </div>
+                            @endif
                         </div>
                             @empty
                                 <div class="card card-body shadow-sm mt-3">
@@ -93,5 +97,41 @@
     </div>
 
 @endsection
+@section('scripts')
+    <script>
+        $(document).ready(function () {
 
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $(document).on('click', '.deleteComment', function (){
+                if (confirm('Are you sure you want to delete this comment?'))
+                {
+                    var thisClicked = $(this);
+                    var comment_id = thisClicked.val();
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/delete-comment",
+                        data: {
+                            'comment_id': comment_id
+                        },
+                        success: function (res) {
+                            if(res.status == 200)
+                            {
+                                thisClicked.closest('.comment-container').remove();
+                                alert(res.message);
+                            } else {
+                                alert(res.message);
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+@endsection
 

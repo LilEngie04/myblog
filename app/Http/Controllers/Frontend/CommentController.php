@@ -44,4 +44,33 @@ class CommentController extends Controller
         }
     }
 
+    public function destroy(Request $request)
+    {
+        if(Auth::check())
+        {
+            $comment = Comment::where('id', $request->comment_id)->where('user_id', Auth::user()->id)->first();
+
+            if ($comment)
+            {
+                $comment->delete();
+                return response()->json([
+                    'status' => 200,
+                    'message' => 'Comment Deleted Successfully'
+                ]);
+            } else
+            {
+                return response()->json([
+                    'status' => 500,
+                    'message' => 'Something went wrong'
+                ]);
+            }
+        } else
+        {
+            return response()->json([
+                'status' => 401,
+                'message' => 'Login to delete this comment'
+            ]);
+        }
+    }
+
 }
