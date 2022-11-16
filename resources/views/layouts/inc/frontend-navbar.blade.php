@@ -4,11 +4,6 @@
             <div class="col-md-3">
                 <img src="{{asset('assets/images/logo.png')}}" style="height: 65px; width: 70px" alt="logo"/>
             </div>
-            <div class="col-md-9 my-auto">
-                <div class="border text-center p-2">
-                    <h5>Advertise Here</h5>
-                </div>
-            </div>
         </div>
     </div>
 </div>

@@ -15,6 +15,7 @@ class Question extends Model
         'name',
         'slug',
         'description',
+        'status',
         'meta_title',
         'meta_description',
         'meta_keyword',

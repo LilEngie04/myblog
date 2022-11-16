@@ -39,6 +39,9 @@ class QuestionFormRequest extends FormRequest
             'description'=>[
                 'nullable'
             ],
+            'status'=>[
+                'nullable'
+            ],
             'meta_title'=>[
                 'required',
                 'string'

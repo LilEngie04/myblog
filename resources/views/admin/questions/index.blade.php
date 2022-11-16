@@ -28,7 +28,7 @@
                         <td>{{$item->id}}</td>
                         <td>{{$item->category->name}}</td>
                         <td>{{$item->name}}</td>
-                        <td>{{$item->status == '1' ? 'Wait':'Answered'}}</td>
+                        <td>{{$item->status == '1' ? 'Answered':'Waiting'}}</td>
                         <td>
                             <a href="{{url('admin/question/'.$item->id)}}" class="btn btn-success">Edit</a>
                         </td>

@@ -33,6 +33,7 @@ class QuestionController extends Controller
         $question->name = $data['name'];
         $question->slug = Str::slug($data['slug']);
         $question->description = $data['description'];
+        $question->status = $request->status == true ? '1': '0';
         $question->meta_title = $data['meta_title'];
         $question->meta_description = $data['meta_description'];
         $question->meta_keyword = $data['meta_keyword'];
